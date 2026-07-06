@@ -1,4 +1,8 @@
+import { useCart } from "@/context/CartContext";
+
 export default function Products() {
+  const { addToCart } = useCart();
+
   return (
     <section
       id="produkty"
@@ -27,6 +31,7 @@ export default function Products() {
           flexWrap: "wrap",
         }}
       >
+        {/* Produkt 1 */}
         <div
           style={{
             background: "#1b1b1b",
@@ -44,6 +49,12 @@ export default function Products() {
           <h2>99 zł</h2>
 
           <button
+            onClick={() =>
+              addToCart({
+                name: "Dostawca perfum",
+                price: 99,
+              })
+            }
             style={{
               background: "#d4af37",
               color: "#000",
@@ -58,6 +69,7 @@ export default function Products() {
           </button>
         </div>
 
+        {/* Produkt 2 */}
         <div
           style={{
             background: "#1b1b1b",
@@ -75,6 +87,12 @@ export default function Products() {
           <h2>149 zł</h2>
 
           <button
+            onClick={() =>
+              addToCart({
+                name: "Metody zarobku",
+                price: 149,
+              })
+            }
             style={{
               background: "#d4af37",
               color: "#000",
